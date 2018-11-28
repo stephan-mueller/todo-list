@@ -1,0 +1,12 @@
+= Todo-List
+:doctype: book
+:source-highlighter: coderay
+:listing-caption: Listing
+:pdf-page-size: A4
+:sectnums:
+:toc:
+:toclevel: 3
+:toclevels: 3
+:hardbreaks:
+
+more details following ...

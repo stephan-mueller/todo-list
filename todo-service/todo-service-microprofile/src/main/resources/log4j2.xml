@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="org.apache.http" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.as" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.as.connector" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.as.protocol" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.as.repository" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.as.server" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.logging" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.remoting" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.resteasy" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.jboss.weld" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="org.wildfly.extension.undertow" level="error" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+
+    <Root level="debug">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>

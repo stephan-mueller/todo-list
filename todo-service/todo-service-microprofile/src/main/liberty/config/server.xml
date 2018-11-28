@@ -1,0 +1,33 @@
+<server>
+    <featureManager>
+        <feature>beanValidation-2.0</feature>
+        <feature>cdi-2.0</feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>jpa-2.2</feature>
+        <feature>jsonb-1.0</feature>
+        <feature>jsonp-1.1</feature>
+
+        <feature>mpConfig-1.3</feature>
+        <feature>mpHealth-1.0</feature>
+        <feature>mpMetrics-1.1</feature>
+    </featureManager>
+
+    <applicationManager autoExpand="true"/>
+    <quickStartSecurity userName="admin" userPassword="admin"/>
+    <keyStore id="defaultKeyStore" password="mpKeystore"/>
+
+    <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
+
+    <webApplication location="todo-service.war" contextRoot="todo-service"/>
+
+    <!-- Derby Library Configuration -->
+    <library id="derbyJDBCLib">
+        <fileset dir="${shared.resource.dir}" includes="derby*.jar"/>
+    </library>
+
+    <!-- Datasource Configuration -->
+    <dataSource id="eventjpadatasource" jndiName="jdbc/eventjpadatasource">
+        <jdbcDriver libraryRef="derbyJDBCLib"/>
+        <properties.derby.embedded databaseName="EventDB" createDatabase="create"/>
+    </dataSource>
+</server>
