@@ -80,7 +80,7 @@ public class TodoResource {
         .withTitle(newTodo.getTitle())
         .withDescription(newTodo.getDescription())
         .withDueDate(newTodo.getDueDate())
-        .setDone(newTodo.isDone())
+        .setDone(newTodo.getDone())
         .build();
 
     repository.create(todo);
@@ -175,7 +175,7 @@ public class TodoResource {
     try {
       Todo foundTodo = repository.find(todoId);
 
-      foundTodo.updateTodo(modifiedTodo.getTitle(), modifiedTodo.getDescription(), modifiedTodo.getDueDate(), modifiedTodo.isDone());
+      foundTodo.updateTodo(modifiedTodo.getTitle(), modifiedTodo.getDescription(), modifiedTodo.getDueDate(), modifiedTodo.getDone());
 
       Todo updatedTodo = repository.update(foundTodo);
 

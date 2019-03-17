@@ -15,17 +15,17 @@
  */
 package de.openknowledge.projects.todolist.rest.application.todo;
 
-import static de.openknowledge.projects.todolist.rest.domain.todo.Todo.DUE_DATE_PATTERN;
 import static org.apache.commons.lang3.Validate.notNull;
 
 import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.value.AbstractValueObject;
+import de.openknowledge.projects.todolist.rest.domain.todo.DueDateAdapter;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 
-import javax.json.bind.annotation.JsonbDateFormat;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * A DTO that represents a {@link Todo} in a list.
@@ -40,7 +40,7 @@ public class TodoListDTO extends AbstractValueObject {
   private String title;
 
   @Schema(example = "2018-01-01T12:34:56.000Z")
-  @JsonbDateFormat(DUE_DATE_PATTERN)
+  @XmlJavaTypeAdapter(DueDateAdapter.class)
   private LocalDateTime dueDate;
 
   @Schema(example = "false")

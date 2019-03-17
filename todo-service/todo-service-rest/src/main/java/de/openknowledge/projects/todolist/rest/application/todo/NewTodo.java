@@ -33,7 +33,7 @@ public class NewTodo extends AbstractTodo {
       "title='" + getTitle() + '\'' +
       ", description='" + getDescription() + '\'' +
       ", dueDate='" + getDueDate() + '\'' +
-      ", done=" + isDone() +
+      ", done=" + getDone() +
       '}';
   }
 }

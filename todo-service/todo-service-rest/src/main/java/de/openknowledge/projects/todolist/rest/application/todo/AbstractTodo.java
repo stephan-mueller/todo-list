@@ -15,18 +15,17 @@
  */
 package de.openknowledge.projects.todolist.rest.application.todo;
 
-import static de.openknowledge.projects.todolist.rest.domain.todo.Todo.DUE_DATE_PATTERN;
-
 import de.openknowledge.projects.todolist.rest.domain.todo.TodoValidationErrorCodes;
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.value.AbstractValueObject;
+import de.openknowledge.projects.todolist.rest.domain.todo.DueDateAdapter;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDateTime;
 
-import javax.json.bind.annotation.JsonbDateFormat;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Abstract to-do.
@@ -44,7 +43,7 @@ public class AbstractTodo extends AbstractValueObject {
 
   @Schema(example = "2018-01-01T12:34:56.000Z", required = true, format = "date-time")
   @NotNull(payload = TodoValidationErrorCodes.DueDateIsNull.class)
-  @JsonbDateFormat(DUE_DATE_PATTERN)
+  @XmlJavaTypeAdapter(DueDateAdapter.class)
   private LocalDateTime dueDate;
 
   @Schema(example = "false", required = true)
@@ -59,7 +58,7 @@ public class AbstractTodo extends AbstractValueObject {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(final String title) {
     this.title = title;
   }
 
@@ -67,7 +66,7 @@ public class AbstractTodo extends AbstractValueObject {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(final String description) {
     this.description = description;
   }
 
@@ -75,15 +74,15 @@ public class AbstractTodo extends AbstractValueObject {
     return dueDate;
   }
 
-  public void setDueDate(LocalDateTime dueDate) {
+  public void setDueDate(final LocalDateTime dueDate) {
     this.dueDate = dueDate;
   }
 
-  public Boolean isDone() {
+  public Boolean getDone() {
     return done;
   }
 
-  public void setDone(Boolean done) {
+  public void setDone(final Boolean done) {
     this.done = done;
   }
 
