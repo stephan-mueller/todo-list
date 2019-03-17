@@ -1,0 +1,59 @@
+thorntail:
+  http:
+    port: 8080
+  context:
+    path: todo-list-rest
+
+  datasources:
+    data-sources:
+      TodoListDS:
+        driver-name: h2
+        connection-url: jdbc:h2:mem:todo-list;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        user-name: sa
+        password:
+
+  keycloak:
+    json:
+      path: keycloak.json
+
+  logging:
+    pattern-formatters:
+      PATTERN:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) - %s%e%n"
+    console-handlers:
+      CONSOLE:
+        named-formatter: PATTERN
+    root-logger:
+      level: INFO
+      handlers:
+      - CONSOLE
+
+  undertow:
+    filter-configuration:
+      response-headers:
+        access-control-allow-origin:
+          # for testing purposes allow every origin
+          header-name: Access-Control-Allow-Origin
+          header-value: "*"
+        access-control-allow-methods:
+          header-name: Access-Control-Allow-Methods
+          header-value: GET, POST, PUT, DELETE, OPTIONS
+        access-control-max-age:
+          header-name: Access-Control-Max-Age
+          header-value: -1
+        access-control-allow-headers:
+          header-name: Access-Control-Allow-Headers
+          header-value: Origin, X-Requested-With, Content-Type, Accept
+    servers:
+      default-server:
+        hosts:
+          default-host:
+            filter-refs:
+              access-control-allow-origin:
+                priority: 1
+              access-control-allow-methods:
+                priority: 1
+              access-control-max-age:
+                priority: 1
+              access-control-allow-headers:
+                priority: 1
