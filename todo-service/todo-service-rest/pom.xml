@@ -25,12 +25,10 @@
         <thorntail.context.path>todo-list-rest</thorntail.context.path>
 
         <version.thorntail>2.3.0.Final</version.thorntail>
-
+        <version.resteasy>3.6.3.Final</version.resteasy>
         <version.h2>1.4.197</version.h2>
 
         <version.apache_commons-lang>3.6</version.apache_commons-lang>
-
-        <version.rome>1.12.0</version.rome>
 
         <version.junit>4.12</version.junit>
         <version.assertj>3.9.1</version.assertj>
@@ -166,6 +164,18 @@
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-atom-provider</artifactId>
+            <version>${version.resteasy}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-jaxrs</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Microprofiles -->
