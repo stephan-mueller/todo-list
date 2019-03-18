@@ -61,6 +61,7 @@ public class Todo extends AbstractEntity<Long> {
   private LocalDateTime dueDate;
 
   @NotNull(payload = TodoValidationErrorCodes.DoneIsNull.class)
+  @Column(name = "TOD_DONE", nullable = false)
   private Boolean done;
 
   protected Todo() {

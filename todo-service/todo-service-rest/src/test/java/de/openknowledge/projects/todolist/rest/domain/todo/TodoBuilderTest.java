@@ -46,7 +46,7 @@ public class TodoBuilderTest {
     assertThat(todo.getTitle()).isEqualTo("clean fridge");
     assertThat(todo.getDescription()).isEqualTo("It's a mess");
     assertThat(todo.getDueDate()).isBefore(LocalDateTime.now());
-    assertThat(todo.isDone()).isFalse();
+    assertThat(todo.getDone()).isFalse();
   }
 
   @Test

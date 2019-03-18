@@ -42,7 +42,7 @@ public class TodoTest {
     assertThat(todo.getTitle()).isEqualTo("clean fridge");
     assertThat(todo.getDescription()).isNullOrEmpty();
     assertThat(todo.getDueDate()).isBefore(LocalDateTime.now());
-    assertThat(todo.isDone()).isTrue();
+    assertThat(todo.getDone()).isTrue();
   }
 
   @Test
@@ -50,7 +50,7 @@ public class TodoTest {
     Todo todo = TestTodos.newDefaultTodo();
 
     assertThatNullPointerException()
-        .isThrownBy(() -> todo.updateTodo(todo.getTitle(), todo.getDescription(), null, todo.isDone()))
+        .isThrownBy(() -> todo.updateTodo(todo.getTitle(), todo.getDescription(), null, todo.getDone()))
         .withMessage("dueDate must not be null")
         .withNoCause();
   }
@@ -60,7 +60,7 @@ public class TodoTest {
     Todo todo = TestTodos.newDefaultTodo();
 
     assertThatNullPointerException()
-        .isThrownBy(() -> todo.updateTodo(null, todo.getDescription(), todo.getDueDate(), todo.isDone()))
+        .isThrownBy(() -> todo.updateTodo(null, todo.getDescription(), todo.getDueDate(), todo.getDone()))
         .withMessage("title must not be null")
         .withNoCause();
   }

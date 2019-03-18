@@ -64,7 +64,7 @@ public class TodoResourceTest {
     newTodo.setTitle(defaultTodo.getTitle());
     newTodo.setDescription(defaultTodo.getDescription());
     newTodo.setDueDate(defaultTodo.getDueDate());
-    newTodo.setDone(defaultTodo.isDone());
+    newTodo.setDone(defaultTodo.getDone());
 
     Mockito.doReturn(defaultTodo).when(repository).create(any(Todo.class));
 
@@ -79,7 +79,7 @@ public class TodoResourceTest {
     assertThat(createdTodo.getTitle()).isEqualTo(defaultTodo.getTitle());
     assertThat(createdTodo.getDescription()).isEqualTo(defaultTodo.getDescription());
     assertThat(createdTodo.getDueDate()).isEqualTo(defaultTodo.getDueDate());
-    assertThat(createdTodo.isDone()).isEqualTo(defaultTodo.isDone());
+    assertThat(createdTodo.getDone()).isEqualTo(defaultTodo.getDone());
   }
 
   @Test
@@ -178,7 +178,7 @@ public class TodoResourceTest {
     assertThat(updatedTodo.getTitle()).isEqualTo(defaultTodo.getTitle());
     assertThat(updatedTodo.getDescription()).isNullOrEmpty();
     assertThat(updatedTodo.getDueDate()).isEqualTo(defaultTodo.getDueDate());
-    assertThat(updatedTodo.isDone()).isTrue();
+    assertThat(updatedTodo.getDone()).isTrue();
   }
 
   @Test
