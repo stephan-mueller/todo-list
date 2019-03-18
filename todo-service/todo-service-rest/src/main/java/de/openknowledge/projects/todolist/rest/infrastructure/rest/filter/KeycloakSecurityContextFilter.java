@@ -20,7 +20,7 @@ import javax.ws.rs.ext.Provider;
 public class KeycloakSecurityContextFilter implements ContainerRequestFilter {
 
     @Override
-    public void filter(ContainerRequestContext requestContext) {
+    public void filter(final ContainerRequestContext requestContext) {
         SecurityContext securityContext = requestContext.getSecurityContext();
         Principal principal = () -> KeycloakSecurityContextAssociation.get().getToken().getPreferredUsername();
         

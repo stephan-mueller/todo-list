@@ -44,6 +44,6 @@ public class TodoFullDTOTest {
     assertThat(todo.getTitle()).isEqualTo(defaultTodo.getTitle());
     assertThat(todo.getDescription()).isEqualTo(defaultTodo.getDescription());
     assertThat(todo.getDueDate()).isEqualTo(defaultTodo.getDueDate());
-    assertThat(todo.isDone()).isEqualTo(defaultTodo.getDone());
+    assertThat(todo.getDone()).isEqualTo(defaultTodo.getDone());
   }
 }

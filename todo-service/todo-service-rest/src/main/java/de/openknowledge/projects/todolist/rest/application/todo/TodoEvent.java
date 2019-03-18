@@ -66,7 +66,7 @@ public class TodoEvent extends TodoListDTO {
 
   @Override
   protected Object[] values() {
-    return new Object[]{getId(), getTitle(), getDueDate(), isDone(), changeType, changeDate};
+    return new Object[]{getId(), getTitle(), getDueDate(), getDone(), changeType, changeDate};
   }
 
   @Override
@@ -75,7 +75,7 @@ public class TodoEvent extends TodoListDTO {
            "id=" + getId() +
            ", title='" + getTitle() + '\'' +
            ", dueDate=" + getDueDate() +
-           ", done=" + isDone() +
+           ", done=" + getDone() +
            ", changeType=" + changeType +
            ", changeDate=" + changeDate +
            "} " + super.toString();

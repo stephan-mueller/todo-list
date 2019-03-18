@@ -39,8 +39,6 @@ import javax.validation.constraints.Size;
 @Table(name = "TAB_TODO")
 public class Todo extends AbstractEntity<Long> {
 
-  public static final String DUE_DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-
   @Id
   @GeneratedValue(strategy = GenerationType.TABLE, generator = "TABLE_GEN")
   @TableGenerator(name = "TABLE_GEN", table = "SEQUENCE_TABLE", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "TOD_SEQ", initialValue = 1000, allocationSize = 1)
@@ -88,11 +86,11 @@ public class Todo extends AbstractEntity<Long> {
     return done;
   }
 
-  public void updateTodo(String title, String description, LocalDateTime dueDate, boolean done) {
+  public void updateTodo(final String title, final String description, final LocalDateTime dueDate, final Boolean done) {
     this.title = notNull(title,"title must not be null");
     this.description = description;
     this.dueDate = notNull(dueDate,"dueDate must not be null");
-    this.done = done;
+    this.done = notNull(done,"done must not be null");
   }
 
   public static TodoBuilder newBuilder() {

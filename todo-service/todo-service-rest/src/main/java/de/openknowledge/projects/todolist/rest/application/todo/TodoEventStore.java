@@ -46,17 +46,17 @@ public class TodoEventStore {
     return Collections.unmodifiableSet(events);
   }
 
-  public void observeCreatedEvent(@Observes(notifyObserver = ALWAYS) @Created Todo todo) {
+  public void observeCreatedEvent(@Observes(notifyObserver = ALWAYS) @Created final Todo todo) {
     LOG.info("Observer todo created event");
     events.add(TodoEvent.newCreatedTodo(todo));
   }
 
-  public void observeDeletedEvent(@Observes(notifyObserver = ALWAYS) @Deleted Todo todo) {
+  public void observeDeletedEvent(@Observes(notifyObserver = ALWAYS) @Deleted final Todo todo) {
     LOG.info("Observer todo deleted event");
     events.add(TodoEvent.newDeletedTodo(todo));
   }
 
-  public void observeUpdatedEvent(@Observes(notifyObserver = ALWAYS) @Updated Todo todo) {
+  public void observeUpdatedEvent(@Observes(notifyObserver = ALWAYS) @Updated final Todo todo) {
     LOG.info("Observer todo updated event");
     events.add(TodoEvent.newUpdatedTodo(todo));
   }

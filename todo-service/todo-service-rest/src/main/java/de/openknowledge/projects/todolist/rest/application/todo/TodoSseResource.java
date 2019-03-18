@@ -60,17 +60,17 @@ public class TodoSseResource {
     store.register(sse, eventSink);
   }
 
-  public void observeCreatedEvent(@Observes(notifyObserver = IF_EXISTS) @Created Todo todo) {
+  public void observeCreatedEvent(@Observes(notifyObserver = IF_EXISTS) @Created final Todo todo) {
     LOG.info("Observer todo created event");
     store.notifyChannel(sse, "Todo created", TodoEvent.newCreatedTodo(todo));
   }
 
-  public void observeDeletedEvent(@Observes(notifyObserver = IF_EXISTS) @Deleted Todo todo) {
+  public void observeDeletedEvent(@Observes(notifyObserver = IF_EXISTS) @Deleted final Todo todo) {
     LOG.info("Observer todo deleted event");
     store.notifyChannel(sse, "Todo deleted", TodoEvent.newDeletedTodo(todo));
   }
 
-  public void observeUpdatedEvent(@Observes(notifyObserver = IF_EXISTS) @Updated Todo todo) {
+  public void observeUpdatedEvent(@Observes(notifyObserver = IF_EXISTS) @Updated final Todo todo) {
     LOG.info("Observer todo updated event");
     store.notifyChannel(sse, "Todo updated", TodoEvent.newUpdatedTodo(todo));
   }

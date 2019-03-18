@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * Abstract to-do.
  */
-public class AbstractTodo extends AbstractValueObject {
+public abstract class AbstractTodo extends AbstractValueObject {
 
   @Schema(example = "clean fridge", required = true, minLength = 1, maxLength = 80)
   @NotNull(payload = TodoValidationErrorCodes.TitleIsNull.class)

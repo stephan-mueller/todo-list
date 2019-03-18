@@ -44,7 +44,7 @@ public class TodoListDTO extends AbstractValueObject {
   private LocalDateTime dueDate;
 
   @Schema(example = "false")
-  private boolean done;
+  private Boolean done;
 
   public TodoListDTO() {
     super();
@@ -71,7 +71,7 @@ public class TodoListDTO extends AbstractValueObject {
     return dueDate;
   }
 
-  public boolean isDone() {
+  public Boolean getDone() {
     return done;
   }
 

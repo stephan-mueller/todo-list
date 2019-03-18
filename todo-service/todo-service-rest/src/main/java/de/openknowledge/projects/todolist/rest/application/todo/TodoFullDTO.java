@@ -46,7 +46,7 @@ public class TodoFullDTO extends TodoListDTO {
 
   @Override
   protected Object[] values() {
-    return new Object[] {getId(), getTitle(), description, getDueDate(), isDone()};
+    return new Object[] {getId(), getTitle(), description, getDueDate(), getDone()};
   }
 
   @Override
@@ -56,7 +56,7 @@ public class TodoFullDTO extends TodoListDTO {
            ", title='" + getTitle() + '\'' +
            ", description='" + description + '\'' +
            ", dueDate=" + getDueDate() +
-           ", done=" + isDone() +
+           ", done=" + getDone() +
            '}';
   }
 }

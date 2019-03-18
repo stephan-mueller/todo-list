@@ -105,6 +105,6 @@ public class TodoFeedResource {
   }
 
   private URI getURI(final TodoEvent todoEvent) {
-    return UriBuilder.fromUri(uriInfo.getBaseUri()).path(TodoResource.class, "getTodo").build(todoEvent.getId());
+    return UriBuilder.fromUri(uriInfo.getBaseUri()).path("todos").path("{id}").build(todoEvent.getId());
   }
 }

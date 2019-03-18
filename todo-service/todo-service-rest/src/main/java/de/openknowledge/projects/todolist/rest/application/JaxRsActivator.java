@@ -39,5 +39,4 @@ import javax.ws.rs.core.Application;
         @ServerVariable(name = "context-root", defaultValue = "todo-list-rest")
     }))
 public class JaxRsActivator extends Application {
-
 }

@@ -43,6 +43,6 @@ public class TodoListDTOTest {
     assertThat(todo.getId()).isNotNull();
     assertThat(todo.getTitle()).isEqualTo(defaultTodo.getTitle());
     assertThat(todo.getDueDate()).isEqualTo(defaultTodo.getDueDate());
-    assertThat(todo.isDone()).isEqualTo(defaultTodo.getDone());
+    assertThat(todo.getDone()).isEqualTo(defaultTodo.getDone());
   }
 }
