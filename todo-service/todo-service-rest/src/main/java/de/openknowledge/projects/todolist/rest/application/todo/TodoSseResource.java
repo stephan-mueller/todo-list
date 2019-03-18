@@ -15,7 +15,7 @@
  */
 package de.openknowledge.projects.todolist.rest.application.todo;
 
-import static javax.enterprise.event.Reception.IF_EXISTS;
+import static javax.enterprise.event.Reception.ALWAYS;
 
 import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.infrastructure.qualifier.Created;
@@ -60,17 +60,17 @@ public class TodoSseResource {
     store.register(sse, eventSink);
   }
 
-  public void observeCreatedEvent(@Observes(notifyObserver = IF_EXISTS) @Created final Todo todo) {
+  public void observeCreatedEvent(@Observes(notifyObserver = ALWAYS) @Created final Todo todo) {
     LOG.info("Observer todo created event");
     store.notifyChannel(sse, "Todo created", TodoEvent.newCreatedTodo(todo));
   }
 
-  public void observeDeletedEvent(@Observes(notifyObserver = IF_EXISTS) @Deleted final Todo todo) {
+  public void observeDeletedEvent(@Observes(notifyObserver = ALWAYS) @Deleted final Todo todo) {
     LOG.info("Observer todo deleted event");
     store.notifyChannel(sse, "Todo deleted", TodoEvent.newDeletedTodo(todo));
   }
 
-  public void observeUpdatedEvent(@Observes(notifyObserver = IF_EXISTS) @Updated final Todo todo) {
+  public void observeUpdatedEvent(@Observes(notifyObserver = ALWAYS) @Updated final Todo todo) {
     LOG.info("Observer todo updated event");
     store.notifyChannel(sse, "Todo updated", TodoEvent.newUpdatedTodo(todo));
   }
