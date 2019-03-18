@@ -1,0 +1,40 @@
+# query todo list
+query {
+  todos {
+    id, title, dueDate, done
+  }
+}
+
+# query todo with id
+query {
+  todo(todoId:1) {
+    id, title, description, dueDate, done
+  }
+}
+
+# create todo
+mutation {
+  createTodo(newTodo: {
+    title:"clean desk",
+    description:"It's dirty",
+    dueDate:"2019-01-01T12:34",
+    done:false
+  }) {
+    id, title, description, dueDate, done
+  }
+}
+
+# delete todo with id
+mutation {
+  deleteTodo(todoId:1)
+}
+
+# update todo with id
+mutation {
+  updateTodo(todoId: 1, modifiedTodo: {
+    title:"clean desk",
+    description:"It's dirty",
+    dueDate:"2019-01-01T12:34",
+    done:false
+  })
+}
