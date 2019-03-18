@@ -56,7 +56,7 @@ public class TodoListDTO extends AbstractValueObject {
     this.id = todo.getId();
     this.title = todo.getTitle();
     this.dueDate = todo.getDueDate();
-    this.done = todo.isDone();
+    this.done = todo.getDone();
   }
 
   public Long getId() {

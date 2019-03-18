@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.rest.infrastructure.rest.validation;
+package de.openknowledge.projects.todolist.rest.infrastructure.rest.exception;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.entity.AbstractEntity;
+import de.openknowledge.projects.todolist.rest.infrastructure.validation.ValidationErrorDTO;
 import de.openknowledge.projects.todolist.rest.infrastructure.validation.ValidationErrorPayload;
 
 import org.junit.AfterClass;

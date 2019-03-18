@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.rest.infrastructure.rest.validation;
+package de.openknowledge.projects.todolist.rest.infrastructure.validation;
 
 import static org.apache.commons.lang3.Validate.notNull;
 
 import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationError;
-import de.openknowledge.projects.todolist.rest.infrastructure.rest.error.ApplicationErrorDTO;
-import de.openknowledge.projects.todolist.rest.infrastructure.validation.ValidationErrorPayload;
+import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationErrorDTO;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

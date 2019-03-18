@@ -15,7 +15,7 @@
  */
 package de.openknowledge.projects.todolist.rest.infrastructure.rest.exception;
 
-import de.openknowledge.projects.todolist.rest.infrastructure.rest.error.ApplicationErrorDTO;
+import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationErrorDTO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -47,21 +47,21 @@ public class Todo extends AbstractEntity<Long> {
   @Column(name = "TOD_ID", nullable = false)
   private Long id;
 
-  @NotNull
-  @Size(min = 1, max = 80)
+  @NotNull(payload = TodoValidationErrorCodes.TitleIsNull.class)
+  @Size(min = 1, max = 80, payload = TodoValidationErrorCodes.InvalidTitleSize.class)
   @Column(name = "TOD_TITLE", nullable = false, length = 80)
   private String title;
 
-  @Size(max = 500)
+  @Size(max = 500, payload = TodoValidationErrorCodes.DescriptionTooLong.class)
   @Column(name = "TOD_DESCRIPTION", length = 500)
   private String description;
 
-  @NotNull
+  @NotNull(payload = TodoValidationErrorCodes.DueDateIsNull.class)
   @Column(name = "TOD_DUEDATE", nullable = false)
   private LocalDateTime dueDate;
 
-  @Column(name = "TOD_DONE", nullable = false)
-  private boolean done;
+  @NotNull(payload = TodoValidationErrorCodes.DoneIsNull.class)
+  private Boolean done;
 
   protected Todo() {
     super();
@@ -83,7 +83,7 @@ public class Todo extends AbstractEntity<Long> {
     return dueDate;
   }
 
-  public boolean isDone() {
+  public Boolean getDone() {
     return done;
   }
 
@@ -107,8 +107,8 @@ public class Todo extends AbstractEntity<Long> {
       this.instance.done = false;
     }
 
-    public TodoBuilder setDone(boolean done) {
-      this.instance.done = done;
+    public TodoBuilder setDone(final Boolean done) {
+      this.instance.done = notNull(done,"done must not be null");
       return this;
     }
 

@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.rest.infrastructure.rest.error;
+package de.openknowledge.projects.todolist.rest.infrastructure.error;
 
 import static org.apache.commons.lang3.Validate.notNull;
 
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.value.AbstractValueObject;
-import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationError;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 

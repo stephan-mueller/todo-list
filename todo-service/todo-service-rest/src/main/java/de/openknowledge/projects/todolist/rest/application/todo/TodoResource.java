@@ -18,7 +18,7 @@ package de.openknowledge.projects.todolist.rest.application.todo;
 import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.domain.todo.TodoRepository;
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.entity.EntityNotFoundException;
-import de.openknowledge.projects.todolist.rest.infrastructure.rest.error.ApplicationErrorDTO;
+import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationErrorDTO;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;

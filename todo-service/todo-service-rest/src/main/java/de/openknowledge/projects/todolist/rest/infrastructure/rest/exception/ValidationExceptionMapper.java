@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.rest.infrastructure.rest.validation;
+package de.openknowledge.projects.todolist.rest.infrastructure.rest.exception;
+
+import de.openknowledge.projects.todolist.rest.infrastructure.validation.ValidationErrorDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;

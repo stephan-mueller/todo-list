@@ -17,7 +17,7 @@ package de.openknowledge.projects.todolist.rest.infrastructure.rest.exception;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import de.openknowledge.projects.todolist.rest.infrastructure.rest.error.ApplicationErrorDTO;
+import de.openknowledge.projects.todolist.rest.infrastructure.error.ApplicationErrorDTO;
 
 import org.junit.Before;
 import org.junit.Test;
