@@ -26,7 +26,7 @@
         <thorntail.context.path>todo-list-graphql</thorntail.context.path>
 
         <version.thorntail>2.3.0.Final</version.thorntail>
-        <version.resteasy>3.6.3.Final</version.resteasy>
+        <version.resteasy>3.6.2.Final</version.resteasy>
         <version.h2>1.4.197</version.h2>
 
         <version.graphql-java>8.0</version.graphql-java>
@@ -48,7 +48,6 @@
         <version.archunit>0.9.2</version.archunit>
 
         <version.hibernate-validator>5.2.4.Final</version.hibernate-validator>
-        <version.keycloak-authz-client>4.8.3.Final</version.keycloak-authz-client>
     </properties>
 
     <build>
@@ -173,14 +172,9 @@
 
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-atom-provider</artifactId>
+            <artifactId>resteasy-jaxrs</artifactId>
             <version>${version.resteasy}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jboss.resteasy</groupId>
-                    <artifactId>resteasy-jaxrs</artifactId>
-                </exclusion>
-            </exclusions>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Microprofiles -->
@@ -194,15 +188,7 @@
         </dependency>
         <dependency>
             <groupId>io.thorntail</groupId>
-            <artifactId>microprofile-jwt</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.thorntail</groupId>
             <artifactId>microprofile-metrics</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>microprofile-restclient</artifactId>
         </dependency>
 
         <!-- Database -->
@@ -210,12 +196,6 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${version.h2}</version>
-        </dependency>
-
-        <!-- Keycloak -->
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>keycloak</artifactId>
         </dependency>
 
         <!-- GraphQL -->
@@ -235,17 +215,17 @@
             <version>${version.graphql-spqr}</version>
         </dependency>
 
-        <!-- Logging -->
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>logging</artifactId>
-        </dependency>
-
         <!-- apache commons -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${version.apache_commons-lang}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>logging</artifactId>
         </dependency>
 
         <!-- unit testing -->
@@ -315,12 +295,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${version.hibernate-validator}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-authz-client</artifactId>
-            <version>${version.keycloak-authz-client}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

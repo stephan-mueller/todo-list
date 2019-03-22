@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.rest.infrastructure.health;
+package de.openknowledge.projects.todolist.rest.infrastructure.microprofiles.health;
 
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;

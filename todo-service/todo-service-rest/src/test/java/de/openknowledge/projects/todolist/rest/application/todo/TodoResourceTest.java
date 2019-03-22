@@ -21,13 +21,10 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
-import de.openknowledge.projects.todolist.rest.application.todo.ModifiedTodo;
 import de.openknowledge.projects.todolist.rest.domain.todo.TestTodos;
 import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.domain.todo.TodoRepository;
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.entity.EntityNotFoundException;
-import de.openknowledge.projects.todolist.rest.application.todo.NewTodo;
-import de.openknowledge.projects.todolist.rest.application.todo.TodoResource;
 
 import org.junit.Rule;
 import org.junit.Test;

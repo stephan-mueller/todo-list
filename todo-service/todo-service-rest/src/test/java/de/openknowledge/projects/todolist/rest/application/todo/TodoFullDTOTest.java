@@ -18,8 +18,8 @@ package de.openknowledge.projects.todolist.rest.application.todo;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 
-import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.domain.todo.TestTodos;
+import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 
 import org.junit.Test;
 

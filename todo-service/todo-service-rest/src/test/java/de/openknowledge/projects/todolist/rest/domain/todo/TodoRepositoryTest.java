@@ -17,8 +17,6 @@ package de.openknowledge.projects.todolist.rest.domain.todo;
 
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 
-import de.openknowledge.projects.todolist.rest.domain.todo.TodoRepository;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -17,9 +17,9 @@ package de.openknowledge.projects.todolist.rest.application.todo;
 
 import static org.apache.commons.lang3.Validate.notNull;
 
+import de.openknowledge.projects.todolist.rest.domain.todo.DueDateAdapter;
 import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
 import de.openknowledge.projects.todolist.rest.infrastructure.domain.value.AbstractValueObject;
-import de.openknowledge.projects.todolist.rest.domain.todo.DueDateAdapter;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 

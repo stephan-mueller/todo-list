@@ -29,7 +29,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLMutation;
@@ -48,7 +47,7 @@ public class TodoGraphQLApi {
 
   @Transactional
   @GraphQLMutation(name = "createTodo")
-  public TodoFullDTO createTodo(@GraphQLArgument(name = "newTodo") @NotNull @Valid final NewTodo newTodo) {
+  public TodoFullDTO createTodo(@GraphQLArgument(name = "newTodo") @Valid final NewTodo newTodo) {
     LOG.info("Create todo {}", newTodo);
 
     Todo todo = Todo.newBuilder()
@@ -116,7 +115,7 @@ public class TodoGraphQLApi {
   @Transactional
   @GraphQLMutation(name = "updateTodo")
   public boolean updateTodo(@GraphQLArgument(name = "todoId") final Long todoId,
-                            @GraphQLArgument(name = "modifiedTodo") @NotNull @Valid final ModifiedTodo modifiedTodo) {
+                            @GraphQLArgument(name = "modifiedTodo") @Valid final ModifiedTodo modifiedTodo) {
     LOG.info("Update todo with id {} ({})", todoId, modifiedTodo);
 
     try {

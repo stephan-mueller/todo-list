@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.todolist.graphql.infrastructure.rest.filter;
+package de.openknowledge.projects.todolist.rest.infrastructure.web.cors;
 
 import static javax.ws.rs.HttpMethod.DELETE;
 import static javax.ws.rs.HttpMethod.GET;

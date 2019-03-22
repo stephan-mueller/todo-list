@@ -15,8 +15,6 @@
  */
 package de.openknowledge.projects.todolist.rest.domain.todo;
 
-import de.openknowledge.projects.todolist.rest.domain.todo.Todo;
-
 import org.mockito.Mockito;
 
 import java.time.LocalDateTime;

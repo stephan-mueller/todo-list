@@ -23,7 +23,6 @@ import de.openknowledge.projects.todolist.graphql.infrastructure.domain.value.Ab
 
 import java.time.LocalDateTime;
 
-import javax.json.bind.annotation.JsonbDateFormat;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import io.leangen.graphql.annotations.GraphQLId;
