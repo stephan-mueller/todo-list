@@ -1,0 +1,25 @@
+<h2>Detail</h2>
+
+<!-- TODO: @Adnan, are there grids with auto line break? -->
+<section class="section">
+  <div class="container">
+    <div class="card w-6" *ngIf="(todo | async) as todo; else notFound">
+      <div class="card__content card__content--event">
+        <div class="card__header">
+          <div class="section-header">
+            <h3 class="section-header__secondary">{{todo.dueDate | date}} ({{todo.done ? 'erledigt' : 'nicht erledigt'}})</h3>
+            <h2 class="section-header__primary">{{todo.title}}</h2>
+          </div>
+        </div>
+        <div class="card__body">{{todo.description}}</div>
+        <div class="card__footer"><a class="btn btn--read-more" [routerLink]="['/todos/edit', todo.id]" queryParamsHandling="merge">bearbeiten</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #notFound>
+  Das gewünschte To-Do konnte nicht gefunden werden.
+</ng-template>
+
+<a routerLink="/todos" queryParamsHandling="merge" class="link">zurück zur Übersicht</a>

@@ -1,0 +1,28 @@
+<h2>To-Dos Übersicht</h2>
+
+<a routerLink="/todos/add" queryParamsHandling="merge" class="link">To-Do hinzufügen</a>
+
+<div class="flex-container">
+  <div class="card w-6 flex-item" *ngFor="let todo of todos | async">
+    <div class="card__content card__content--event">
+      <div class="card__header">
+        <div class="section-header">
+          <h3 class="section-header__secondary">{{todo.dueDate | date}} ({{todo.done ? 'erledigt' : 'nicht erledigt'}}
+            )</h3>
+          <h2 class="section-header__primary">{{todo.title}}</h2>
+        </div>
+      </div>
+      <div class="card__body">{{todo.description}}</div>
+      <div class="card__footer">
+        <a class="btn" [routerLink]="['/todos', todo.id]" queryParamsHandling="merge">anzeigen</a>
+        <a class="btn" [routerLink]="['/todos/edit', todo.id]" queryParamsHandling="merge">bearbeiten</a>
+        <a class="btn" href="javascript:void(0)" (click)="delete(todo.id)">löschen</a>
+        <a class="btn" href="javascript:void(0)" (click)="done(todo)" *ngIf="!todo.done">erledigen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTodos>
+  Es existieren noch keine To-Dos.
+</ng-template>

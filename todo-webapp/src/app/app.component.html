@@ -1,0 +1,55 @@
+<header>
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__content">
+        <a routerLink="/" queryParamsHandling="merge" class="nav__logo">
+          <img width="190" height="86"
+               src="assets/OPK_Logo_waag_kl_RGB-e1486736462466-190x86.png"
+               class="attachment-page-logo size-page-logo" alt=""
+               srcset="assets/OPK_Logo_waag_kl_RGB-e1486736462466-190x86.png 190w, assets/OPK_Logo_waag_kl_RGB-e1486736462466-300x136.png 300w, assets/OPK_Logo_waag_kl_RGB-e1486736462466-768x347.png 768w, assets/OPK_Logo_waag_kl_RGB-e1486736462466-1024x463.png 1024w, assets/OPK_Logo_waag_kl_RGB-e1486736462466-128x58.png 128w, assets/OPK_Logo_waag_kl_RGB-e1486736462466-770x348.png 770w"
+               sizes="(max-width: 190px) 100vw, 190px">
+        </a>
+
+        <div class="nav__menu">
+          <span class="nav__menu-bar"></span>
+          <span class="nav__menu-bar"></span>
+          <span class="nav__menu-bar"></span>
+        </div>
+
+        <div class="nav__links">
+          <ul class="nav__links-content">
+            <li class="nav__link">
+              <a href="/todos?backendType=rest">REST</a>
+            </li>
+
+            <li class="nav__link">
+              <a href="/todos?backendType=graphql">GraphQL</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<div class="container" style="padding-bottom: 1em;">
+  <router-outlet></router-outlet>
+</div>
+
+<app-sse-box></app-sse-box>
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="row justify-end">
+        <div class="col w-12">
+          <ul class="footer__menu">
+            <li><a href="https://www.openknowledge.de/impressum/">Impressum</a></li>
+            <li><a href="https://www.openknowledge.de/datenschutz/">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

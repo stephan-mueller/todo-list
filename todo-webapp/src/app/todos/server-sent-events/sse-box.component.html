@@ -1,0 +1,26 @@
+<div class="container" style="padding-bottom: 2em;">
+  <div class="widget widget--blue-light">
+    <div class="section-header">
+      <div class="section-header__primary">
+        Server Sent Events
+      </div>
+    </div>
+
+    <div class="table-wrapper sse-table">
+      <table>
+        <thead>
+        <tr>
+          <th>Typ</th>
+          <th>Inhalt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let event of events | async">
+          <td>{{event.type}}</td>
+          <td>{{event.message | json}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
