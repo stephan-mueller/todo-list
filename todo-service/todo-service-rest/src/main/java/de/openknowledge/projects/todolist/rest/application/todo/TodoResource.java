@@ -129,6 +129,8 @@ public class TodoResource {
       Todo foundTodo = repository.find(todoId);
       TodoFullDTO todo = new TodoFullDTO(foundTodo);
 
+      LOG.info("Found todo {}", foundTodo);
+
       return Response.status(Status.OK).entity(todo).build();
     } catch (EntityNotFoundException e) {
       LOG.warn("Todo with id {} not found", todoId);
